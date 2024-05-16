@@ -7,4 +7,6 @@ const app = express();
 const PORT = process.env.PORT;
 const MongoDB_URI = process.env.MONGO_URI
 
+app.use(express.json());
+
 connectDB(MongoDB_URI, app, PORT)
