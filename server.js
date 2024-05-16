@@ -1,8 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import connectDB from './database/connectDB.js';
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
+const MongoDB_URI = process.env.MONGO_URI
 
-app.listen(PORT, () => console.log(`Server is running on ${PORT}`))
+connectDB(MongoDB_URI, app, PORT)
